@@ -13,6 +13,7 @@
     },
     "rules": {
         "linebreak-style": "off",
-        "semi": ["error", "never"]
+        "semi": ["error", "never"],
+        "no-param-reassign": ["erorr", {"props": false}]
     }
 }
