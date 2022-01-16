@@ -1,5 +1,6 @@
 const createServer = require('./CreateServer')
 const MathBasic = require('../math/MathBasic')
+const FigureCalculator = require('../geometry/FigureCalculator')
 
 describe('A HTTP server', () => {
   describe('when GET /add', () => {
@@ -99,9 +100,9 @@ describe('A HTTP server', () => {
       // Arrange
       const a = 4
       const b = 10
-      const spyAdd = jest.spyOn(MathBasic, 'add')
-      const spyMultiply = jest.spyOn(MathBasic, 'multiply')
-      const server = createServer({ mathBasic: MathBasic })
+      const figureCalculator = new FigureCalculator(MathBasic)
+      const spyCalculateRectanglePerimeter = jest.spyOn(figureCalculator, 'calculateRectanglePerimeter')
+      const server = createServer({ figureCalculator })
 
       // Action
       const response = await server.inject({
@@ -114,8 +115,7 @@ describe('A HTTP server', () => {
       // Assert
       expect(response.statusCode).toEqual(200)
       expect(responseJSON.value).toEqual(28)
-      expect(spyAdd).toBeCalledWith(a, b)
-      expect(spyMultiply).toBeCalledWith(2, (a + b))
+      expect(spyCalculateRectanglePerimeter).toBeCalledWith(a, b)
     })
   })
 
@@ -124,8 +124,9 @@ describe('A HTTP server', () => {
       // Arrange
       const a = 4
       const b = 10
-      const spyMultiply = jest.spyOn(MathBasic, 'multiply')
-      const server = createServer({ mathBasic: MathBasic })
+      const figureCalculator = new FigureCalculator(MathBasic)
+      const spyCalculateRectangleArea = jest.spyOn(figureCalculator, 'calculateRectangleArea')
+      const server = createServer({ figureCalculator })
 
       // Action
       const response = await server.inject({
@@ -138,7 +139,7 @@ describe('A HTTP server', () => {
       // Assert
       expect(response.statusCode).toEqual(200)
       expect(responseJSON.value).toEqual(40)
-      expect(spyMultiply).toBeCalledWith(a, b)
+      expect(spyCalculateRectangleArea).toBeCalledWith(a, b)
     })
   })
 
@@ -148,8 +149,10 @@ describe('A HTTP server', () => {
       const sideA = 3
       const sideB = 5
       const base = 4
-      const spyAdd = jest.spyOn(MathBasic, 'add')
-      const server = createServer({ mathBasic: MathBasic })
+      const figureCalculator = new FigureCalculator(MathBasic)
+      const spyCalculateTrianglePerimeter = jest.spyOn(figureCalculator, 'calculateTrianglePerimeter')
+
+      const server = createServer({ figureCalculator })
 
       // Action
       const response = await server.inject({
@@ -162,7 +165,7 @@ describe('A HTTP server', () => {
       // Assert
       expect(response.statusCode).toEqual(200)
       expect(responseJSON.value).toEqual(12)
-      expect(spyAdd).toBeCalledWith(sideA, (sideB + base))
+      expect(spyCalculateTrianglePerimeter).toBeCalledWith(sideA, sideB, base)
     })
   })
 
@@ -171,9 +174,9 @@ describe('A HTTP server', () => {
       // Arrange
       const height = 4
       const base = 5
-      const spyMultiply = jest.spyOn(MathBasic, 'multiply')
-      const spyDivide = jest.spyOn(MathBasic, 'divide')
-      const server = createServer({ mathBasic: MathBasic })
+      const figureCalculator = new FigureCalculator(MathBasic)
+      const spyCalculateTriangleArea = jest.spyOn(figureCalculator, 'calculateTriangleArea')
+      const server = createServer({ figureCalculator })
 
       // Action
       const response = await server.inject({
@@ -186,8 +189,7 @@ describe('A HTTP server', () => {
       // Assert
       expect(response.statusCode).toEqual(200)
       expect(responseJSON.value).toEqual(10)
-      expect(spyMultiply).toBeCalledWith(base, height)
-      expect(spyDivide).toBeCalledWith((base * height), 2)
+      expect(spyCalculateTriangleArea).toBeCalledWith(base, height)
     })
   })
 })

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1642346842492" clover="3.2.0">
-  <project timestamp="1642346842492" name="All files">
+<coverage generated="1642348570252" clover="3.2.0">
+  <project timestamp="1642348570252" name="All files">
     <metrics statements="94" coveredstatements="93" conditionals="52" coveredconditionals="49" methods="28" coveredmethods="28" elements="174" coveredelements="170" complexity="0" loc="94" ncloc="94" packages="4" files="6" classes="6"/>
     <package name="api">
       <metrics statements="30" coveredstatements="30" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="9"/>
@@ -30,38 +30,38 @@
         <line num="67" count="1" type="stmt"/>
         <line num="74" count="1" type="stmt"/>
         <line num="75" count="1" type="stmt"/>
-        <line num="77" count="1" type="stmt"/>
-        <line num="84" count="1" type="stmt"/>
-        <line num="85" count="1" type="stmt"/>
-        <line num="87" count="1" type="stmt"/>
-        <line num="92" count="8" type="stmt"/>
-        <line num="95" count="1" type="stmt"/>
+        <line num="81" count="1" type="stmt"/>
+        <line num="88" count="1" type="stmt"/>
+        <line num="89" count="1" type="stmt"/>
+        <line num="91" count="1" type="stmt"/>
+        <line num="96" count="8" type="stmt"/>
+        <line num="99" count="1" type="stmt"/>
       </file>
     </package>
     <package name="geometry">
       <metrics statements="20" coveredstatements="19" conditionals="25" coveredconditionals="23" methods="5" coveredmethods="5"/>
       <file name="FigureCalculator.js" path="E:\Learn Folder\dicoding\math\src\geometry\FigureCalculator.js">
         <metrics statements="20" coveredstatements="19" conditionals="25" coveredconditionals="23" methods="5" coveredmethods="5"/>
-        <line num="3" count="16" type="stmt"/>
-        <line num="7" count="9" type="cond" truecount="2" falsecount="0"/>
-        <line num="8" count="5" type="stmt"/>
-        <line num="9" count="5" type="cond" truecount="4" falsecount="0"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="15" count="9" type="cond" truecount="2" falsecount="0"/>
-        <line num="16" count="5" type="stmt"/>
-        <line num="17" count="5" type="cond" truecount="4" falsecount="0"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="23" count="9" type="cond" truecount="2" falsecount="0"/>
-        <line num="24" count="2" type="stmt"/>
-        <line num="25" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="3" count="20" type="stmt"/>
+        <line num="7" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="6" type="cond" truecount="4" falsecount="0"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="15" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="6" type="stmt"/>
+        <line num="17" count="6" type="cond" truecount="4" falsecount="0"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="23" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="25" count="3" type="cond" truecount="1" falsecount="1"/>
         <line num="30" count="0" type="stmt"/>
-        <line num="33" count="2" type="stmt"/>
-        <line num="37" count="5" type="cond" truecount="1" falsecount="1"/>
-        <line num="38" count="5" type="stmt"/>
-        <line num="39" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="33" count="3" type="stmt"/>
+        <line num="37" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="38" count="6" type="stmt"/>
+        <line num="39" count="6" type="cond" truecount="2" falsecount="0"/>
         <line num="43" count="4" type="stmt"/>
-        <line num="46" count="1" type="stmt"/>
-        <line num="50" count="1" type="stmt"/>
+        <line num="46" count="2" type="stmt"/>
+        <line num="50" count="2" type="stmt"/>
       </file>
     </package>
     <package name="math">
