@@ -5,32 +5,32 @@ class RocketLauncher {
   }
 
   launchAllRockets() {
-    this.rockets.forEach((v) => {
-      v.engine = 'active'
+    this.rockets.forEach((rocket) => {
+      rocket.engine = 'active'
     })
 
     this.rockets = []
   }
 
-  launchByQueue(){
+  launchByQueue() {
     const rocket = this.rockets.shift()
-    rocket.engine   ='active'    
+    rocket.engine = 'active'
   }
 
-  async repairAllRockets(){
+  async repairAllRockets() {
     let failedRepairCount = 0
-    try{
-      for(const rocket of this.rockets){
+    try {
+      for (const rocket of this.rockets) {
         await this.repairKit.repair(rocket)
       }
-    }catch(err){
+    } catch (err) {
       failedRepairCount++
     }
 
-    if(!failedRepairCount){
-      return `all rocket repaired!`
+    if (!failedRepairCount) {
+      return 'all rocket repaired!'
     }
-    
+
     return `There was ${failedRepairCount} of ${this.rockets.length} rocket fail to repair!`
   }
 }
